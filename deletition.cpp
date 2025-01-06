@@ -14,13 +14,14 @@ public:
     }
 };
 
-// Function to remove the head of the linked list
-Node* removeHead(Node* head) {
-    if (head == nullptr) return head;
 
-    Node* temp = head;
-    head = head->next;
-    delete temp; // Free the memory of the old head
+// Function to remove the head of the linked list
+Node* removeHead(Node* head){
+    if(head==nullptr) return head;
+
+    Node*temp=head;
+    head= head->next;
+    delete temp;
     return head;
 }
 
@@ -31,7 +32,7 @@ Node* convertArr2LL(const vector<int>& arr) {
     Node* head = new Node(arr[0]); // Create the head node
     Node* current = head;
 
-    for (size_t i = 1; i < arr.size(); i++) {
+    for (int i = 1; i < arr.size(); i++) {
         current->next = new Node(arr[i]); // Create new nodes
         current = current->next;
     }
